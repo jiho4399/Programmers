@@ -14,12 +14,13 @@ def solution(fees, records):
       in_dic[num] = time
     else:
       out_dic[num] = time
+      
       if num not in sum_dic:
         sum_dic[num] = out_dic[num] - in_dic[num]
-        del in_dic[num]
       else:
         sum_dic[num] += out_dic[num] - in_dic[num]
-        del in_dic[num]
+      
+      del in_dic[num]
 
   if in_dic:
     for num, time in in_dic.items():
